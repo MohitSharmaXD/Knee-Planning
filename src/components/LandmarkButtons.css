@@ -1,0 +1,83 @@
+.landmark-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column; 
+    gap:10px;
+}
+
+.landmark-radio {
+    display: none;
+}
+
+.landmark-btn {
+    position: relative;
+    padding-left: 30px; 
+    margin-bottom: 10px;
+    cursor: pointer; 
+}
+
+/* Custom styling for the dot */
+.landmark-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px; 
+    height: 16px; 
+    border-radius: 50%; 
+    border: 2px solid grey; 
+    background: transparent; 
+    transition: background 0.3s, border 0.3s; 
+}
+
+
+.landmark-radio:checked + .landmark-btn::before {
+    background: transparent; 
+    border: 2px solid black; 
+}
+
+
+.landmark-btn::after {
+    content: '';
+    position: absolute;
+    left: 5px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    background: grey; 
+    display: none;
+}
+
+
+.landmark-radio:not(:checked) + .landmark-btn::after {
+    display: block; 
+}
+
+
+.landmark-radio:checked + .landmark-btn::after {
+    display: block;
+    background: black; 
+}
+
+.update-btn {
+    margin-top: 20px; 
+    padding: 10px 15px; 
+    background-color: #007BFF; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background 0.3s;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
