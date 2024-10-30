@@ -4,14 +4,14 @@
     align-items: center; 
 }
 
-.radio-group {
+.checkbox-group {
     display: flex;
     flex-direction: column; 
-    gap:10px;
+    gap: 25px;
 }
 
-.landmark-radio {
-    display: none;
+.landmark-checkbox {
+    display: none; 
 }
 
 .landmark-btn {
@@ -21,7 +21,7 @@
     cursor: pointer; 
 }
 
-/* Custom styling for the dot */
+
 .landmark-btn::before {
     content: '';
     position: absolute;
@@ -30,16 +30,22 @@
     transform: translateY(-50%);
     width: 16px; 
     height: 16px; 
-    border-radius: 50%; 
+    border-radius: 50%;
     border: 2px solid grey; 
     background: transparent; 
     transition: background 0.3s, border 0.3s; 
 }
 
 
-.landmark-radio:checked + .landmark-btn::before {
-    background: transparent; 
-    border: 2px solid black; 
+.landmark-checkbox:checked + .landmark-btn::after {
+    display: block; 
+    background: black; 
+}
+
+
+.landmark-checkbox:not(:checked) + .landmark-btn::after {
+    display: block; 
+    background: grey; 
 }
 
 
@@ -52,19 +58,17 @@
     width: 8px; 
     height: 8px; 
     border-radius: 50%; 
-    background: grey; 
-    display: none;
+    display: none; 
 }
 
 
-.landmark-radio:not(:checked) + .landmark-btn::after {
+.landmark-checkbox:checked + .landmark-btn::after {
     display: block; 
+    background: black; 
 }
 
-
-.landmark-radio:checked + .landmark-btn::after {
-    display: block;
-    background: black; 
+.landmark-checkbox:checked + .landmark-btn::before {
+    border: 2px solid grey; 
 }
 
 .update-btn {
